@@ -37,7 +37,7 @@ export const tokenizer = (input: string): Token[] => {
       continue;
     }
 
-    if (char === ';') {
+    if (char === ',') {
       tokens.push({ type: 'Comma', value: char });
       current++;
       continue;
@@ -78,8 +78,7 @@ export const tokenizer = (input: string): Token[] => {
       current++;
       continue;
     }
-
     throw new Error('Unexpected character: ' + char);
   }
-  return [];
+  return tokens;
 };
